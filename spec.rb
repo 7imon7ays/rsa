@@ -13,8 +13,13 @@ describe "rsa" do
     test_encryption_with_values(prime_a, prime_b, message)
   end
 
-  it "works using primes other than 53 and 59" do
-    prime_a, prime_b, message = 61, 59, 500
+  it "works using primes less than 53 and 59" do
+    prime_a, prime_b, message = 37, 47, 500
+    test_encryption_with_values(prime_a, prime_b, message)
+  end
+
+  it "works using primes greater than 53 and 59" do
+    prime_a, prime_b, message = 61, 67, 500
     test_encryption_with_values(prime_a, prime_b, message)
   end
 end
